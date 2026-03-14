@@ -1,0 +1,3 @@
+﻿QuickPen alpha 0.1.3a
+Source commit: 6beca33
+Generated at: 2026-03-14T21:38:52Z
