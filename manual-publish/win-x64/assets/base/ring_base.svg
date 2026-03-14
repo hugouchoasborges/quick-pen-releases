@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="gDarkRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B3642" />
+      <stop offset="100%" stop-color="#1F2933" />
+    </linearGradient>
+  </defs>
+  <path d="M 124,64 A 60,60 0 1 1 4,64 A 60,60 0 1 1 124,64 Z M 108,64 A 44,44 0 1 0 20,64 A 44,44 0 1 0 108,64 Z"
+        fill="url(#gDarkRing)"
+        fill-rule="evenodd" />
+</svg>
