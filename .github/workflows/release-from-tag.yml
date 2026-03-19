@@ -1,4 +1,4 @@
-﻿name: Release From Tag
+name: Release From Tag
 
 on:
   push:
@@ -61,11 +61,13 @@ jobs:
           SHA256="$(sha256sum "${INSTALLER_PATH}" | awk '{print toupper($1)}')"
           INSTALLER_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG_NAME}/QuickPen-Setup.exe"
           RELEASE_NOTES_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
-          RELEASE_NAME="QuickPen ${VERSION}"
+
           if [[ "${VERSION}" == *a ]]; then
-            RELEASE_NAME="${RELEASE_NAME} (Alpha)"
+            RELEASE_NAME="QuickPen ${VERSION} (Alpha)"
           elif [[ "${VERSION}" == *b ]]; then
-            RELEASE_NAME="${RELEASE_NAME} (Beta)"
+            RELEASE_NAME="QuickPen ${VERSION} (Beta)"
+          else
+            RELEASE_NAME="QuickPen ${VERSION}"
           fi
 
           {
@@ -73,7 +75,6 @@ jobs:
             echo "version=${VERSION}"
             echo "release_dir=${RELEASE_DIR}"
             echo "installer_path=${INSTALLER_PATH}"
-            echo "info_path=${INFO_PATH}"
             echo "notes_path=${NOTES_PATH}"
             echo "release_date_utc=${RELEASE_DATE_UTC}"
             echo "sha256=${SHA256}"
@@ -90,3 +91,46 @@ jobs:
           body_path: ${{ steps.vars.outputs.notes_path }}
           files: ${{ steps.vars.outputs.installer_path }}
 
+      - name: Update feed manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.vars.outputs.version }}"
+          RELEASE_DATE_UTC="${{ steps.vars.outputs.release_date_utc }}"
+          INSTALLER_URL="${{ steps.vars.outputs.installer_url }}"
+          SHA256="${{ steps.vars.outputs.sha256 }}"
+          RELEASE_NOTES_URL="${{ steps.vars.outputs.release_notes_url }}"
+
+          ENTRY_JSON="$(jq -n \
+            --arg version "${VERSION}" \
+            --arg releaseDateUtc "${RELEASE_DATE_UTC}" \
+            --arg installerUrl "${INSTALLER_URL}" \
+            --arg installerSha256 "${SHA256}" \
+            --arg releaseNotesUrl "${RELEASE_NOTES_URL}" \
+            '{version:$version,releaseDateUtc:$releaseDateUtc,installerUrl:$installerUrl,installerSha256:$installerSha256,releaseNotesUrl:$releaseNotesUrl}')"
+
+          echo "${ENTRY_JSON}" > latest.json
+
+          if [ ! -f releases-index.json ]; then
+            echo "[]" > releases-index.json
+          fi
+
+          jq --argjson entry "${ENTRY_JSON}" '
+            [ .[] | select(.version != $entry.version) ] + [ $entry ]
+            | sort_by(.version)
+          ' releases-index.json > releases-index.json.tmp
+          mv releases-index.json.tmp releases-index.json
+
+      - name: Commit manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- latest.json releases-index.json; then
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add latest.json releases-index.json
+          git commit -m "chore: update manifests for ${{ steps.vars.outputs.version }}"
+          git push origin HEAD:main
