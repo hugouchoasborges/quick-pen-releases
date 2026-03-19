@@ -1,4 +1,4 @@
-name: Release From Tag
+﻿name: Release From Tag
 
 on:
   push:
@@ -134,3 +134,4 @@ jobs:
           git add latest.json releases-index.json
           git commit -m "chore: update manifests for ${{ steps.vars.outputs.version }}"
           git push origin HEAD:main
+
