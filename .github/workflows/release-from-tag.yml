@@ -27,11 +27,16 @@ jobs:
           VERSION="${TAG_NAME#v}"
           RELEASE_DIR="releases/${VERSION}"
           INSTALLER_PATH="${RELEASE_DIR}/QuickPen-Setup.exe"
+          PORTABLE_ZIP_PATH="${RELEASE_DIR}/QuickPen-Setup.zip"
           INFO_PATH="${RELEASE_DIR}/release-info.json"
           NOTES_PATH="${RELEASE_DIR}/release-notes.md"
 
           if [ ! -f "${INSTALLER_PATH}" ]; then
             echo "Missing installer file: ${INSTALLER_PATH}" >&2
+            exit 1
+          fi
+          if [ ! -f "${PORTABLE_ZIP_PATH}" ]; then
+            echo "Missing portable zip file: ${PORTABLE_ZIP_PATH}" >&2
             exit 1
           fi
           if [ ! -f "${INFO_PATH}" ]; then
@@ -75,6 +80,7 @@ jobs:
             echo "version=${VERSION}"
             echo "release_dir=${RELEASE_DIR}"
             echo "installer_path=${INSTALLER_PATH}"
+            echo "portable_zip_path=${PORTABLE_ZIP_PATH}"
             echo "notes_path=${NOTES_PATH}"
             echo "release_date_utc=${RELEASE_DATE_UTC}"
             echo "sha256=${SHA256}"
@@ -83,13 +89,15 @@ jobs:
             echo "release_name=${RELEASE_NAME}"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Publish GitHub release and upload installer
+      - name: Publish GitHub release and upload assets
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.vars.outputs.tag_name }}
           name: ${{ steps.vars.outputs.release_name }}
           body_path: ${{ steps.vars.outputs.notes_path }}
-          files: ${{ steps.vars.outputs.installer_path }}
+          files: |
+            ${{ steps.vars.outputs.installer_path }}
+            ${{ steps.vars.outputs.portable_zip_path }}
 
       - name: Update feed manifests
         shell: bash
