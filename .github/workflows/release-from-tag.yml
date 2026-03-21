@@ -68,11 +68,11 @@ jobs:
           RELEASE_NOTES_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
 
           if [[ "${VERSION}" == *a ]]; then
-            RELEASE_NAME="Quick Pen ${VERSION} (Alpha)"
+            RELEASE_NAME="QuickPen ${VERSION} (Alpha)"
           elif [[ "${VERSION}" == *b ]]; then
-            RELEASE_NAME="Quick Pen ${VERSION} (Beta)"
+            RELEASE_NAME="QuickPen ${VERSION} (Beta)"
           else
-            RELEASE_NAME="Quick Pen ${VERSION}"
+            RELEASE_NAME="QuickPen ${VERSION}"
           fi
 
           {
