@@ -1,7 +1,7 @@
 {
-  "version": "0.5.3",
-  "releaseDateUtc": "2026-03-31T16:14:17Z",
-  "installerUrl": "https://github.com/hugouchoasborges/quick-pen-releases/releases/download/v0.5.3/QuickPen-Setup.exe",
-  "installerSha256": "788A137ECEE4308671E0C7774A385B6946AEB679DB7367C61B5E40C98AF21685",
-  "releaseNotesUrl": "https://github.com/hugouchoasborges/quick-pen-releases/releases/tag/v0.5.3"
+  "version": "0.5.5",
+  "releaseDateUtc": "2026-04-03T02:53:20Z",
+  "installerUrl": "https://github.com/hugouchoasborges/quick-pen-releases/releases/download/v0.5.5/QuickPen-Setup.exe",
+  "installerSha256": "FBC4312F928625420370BD910F2B6EACC4460A5395E7A1BD026A791AC4534E66",
+  "releaseNotesUrl": "https://github.com/hugouchoasborges/quick-pen-releases/releases/tag/v0.5.5"
 }
