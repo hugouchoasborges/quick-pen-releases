@@ -1,0 +1,78 @@
+﻿# QuickPen 0.5.23
+
+## Highlights
+- Add release highlights for QuickPen.
+
+## Included Commits
+
+- Fix tools settings localization layout and remove minimal overlay hover buttons
+- Clamp highlighter preview opacity for readability
+- Fix highlighter preview alpha and counter label alignment
+- Improve timer digit shortcut matching and text editor multiline behavior
+- Fix remaining localization in shortcuts, tool order, and radial labels
+- Refine settings tabs and tools expand/collapse controls
+- Fix tools layout sync with radial wheel ordering
+- Add Clear All shortcut and switch to Pointer when opening Settings
+- Add General settings and diagnose radial shortcut label rendering
+- Refine settings UI: updates text color and shortcuts behavior
+- Block global shortcuts while settings window is foreground
+- Fix pinned radial overlay icon restore and remove temp debug logs
+- Fix pinned radial shortcut positioning and shortcut integration
+- Add WPF screenshot preview notification with async thumbnail and diagnostics
+- Refine screenshot freeze flow and force idle after capture
+- Add timer 3s/4s submenu options and keyboard shortcuts
+- Add Settings radial tool and release-notes commit-title automation
+- Fix overlay startup visibility and tray overlay submenu labels
+- chore: update QuickPen release submodule pointer for v0.5.22
+- Fix minimal timer badge position on right-docked overlay
+- chore: update QuickPen release submodule pointer for v0.5.21
+- fix: reset overlay icon drag visual state on drop
+- Add Minimal Mode lifetime timer badge
+- Fix pinned dial outside-click close and hide pin affordance
+- Fix pinned dial cursor sync and overlay drag idle visual reset
+- Fix radial/cursor state sync and reduce noisy diagnostics
+- Block Alt+Tab while non-pointer tool is active
+- Fix double-ctrl jitter sensitivity under UI load
+- Fix overlay hover-to-idle flow and input ownership regressions
+- Refine minimal overlay drag/ghost visuals and anchored radial open
+- Refine edge overlay dock visuals and fix docking reliability
+- Add minimal mode overlay and fix pinned radial input/focus behavior
+- Fix pointer restore exclusions and make snapshot capture immediate
+- Fix mixed-DPI capture path and remove temporary capture debugging
+- Fix deselection click behavior and remove temporary DPI logs
+- Fix mixed-DPI radial positioning and add diagnostics
+- feat(counter): make shift+wheel resize per-item and persist radius
+- chore: update QuickPen release submodule pointer for v0.5.20
+- fix: keep solid fill rotation in sync with parent shape
+- feat(label): add edge resize handles and keep wheel stroke-to-zero
+- feat(label): mirrored resize and default autofit background
+- chore: update QuickPen release submodule pointer for v0.5.19
+- feat: refine screenshot selection wheel and saved selection controls
+- release: 0.5.18 stable with rotation fixes
+- chore: update QuickPen release submodule pointer for v0.5.17
+- feat: refine screenshot multi/auto visuals and clear-all semantics
+- Refine clear-all behavior and screenshot multi/auto capture UX
+- chore: update QuickPen release submodule pointer for v0.5.16
+- feat: expand move single-selection promotion and stabilize dynamic contrast
+- chore: update QuickPen release submodule pointer for v0.5.15
+- fix: refine radial expanded label geometry and sizing
+- chore: update QuickPen release submodule pointer for v0.5.14
+- fix: prevent main UI bleed in printscreen freeze capture
+- chore: update QuickPen release submodule pointer for v0.5.13
+- feat: improve radial/background interaction and topmost behavior
+- chore: update QuickPen release submodule pointer for v0.5.12
+- Auto-capture lock/freeze fixes and radial stop action
+- Fix radial style clicks inside active capture selection
+- chore: update release pointer for v0.5.11
+- fix: improve post-it cursor and editing flow
+- chore: update QuickPen release submodule pointer for v0.5.10
+- fix: restore last working tool on radial activation
+- chore: update QuickPen release submodule pointer for v0.5.9
+- fix: restore last tool on ctrl activation and harden double-ctrl
+- chore: update release pointers for v0.5.8
+- Show Post-it title divider only when title exists
+- chore: update release pointers for v0.5.7
+- Keep Post-its when using Clear All
+- chore: update QuickPen release submodule pointer for v0.5.6
+- Improve Post-it and shape text editing interactions
+- Add Post-it tool and shortcut refinements
