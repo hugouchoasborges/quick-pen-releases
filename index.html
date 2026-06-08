@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickPen | On-screen drawing and annotation for Windows</title>
+  <meta name="description" content="QuickPen is a lightweight Windows overlay app for drawing, highlighting, annotating, and capturing the screen with a radial menu and tray-first workflow.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+  <header class="topbar container">
+    <a class="brand" href="#top">QuickPen</a>
+    <div class="topbar-right">
+      <nav>
+        <a href="#benefits">Benefits</a>
+        <a href="#features">Features</a>
+        <a href="#media">Media</a>
+        <a href="#plans">Free vs Pro</a>
+        <a href="#faq">FAQ</a>
+        <a href="manual.html">Manual</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow">Draw on your screen. Capture. Move on.</p>
+        <h1>Annotate anything on Windows in seconds.</h1>
+        <p class="sub">QuickPen sits in the tray and snaps an overlay on top of your screen. Press <strong>Ctrl Ctrl</strong> to open a radial menu, draw, highlight, blur, capture and keep working without breaking focus.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/hugouchoasborges/quick-pen-releases/releases/latest/download/QuickPen-Setup.exe" data-latest-download>Download for Windows</a>
+          <a class="btn btn-secondary" href="manual.html">Read the manual</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="window-window">
+          <div class="window-bar"></div>
+          <img src="assets/images/tool_pen.png" alt="QuickPen pen tool drawing on a desktop overlay">
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="benefits container">
+      <h2>What you get</h2>
+      <div class="grid-3">
+        <article>
+          <h3>Tray-first overlay</h3>
+          <p>QuickPen lives in the tray and overlays your entire screen on demand without owning a window.</p>
+        </article>
+        <article>
+          <h3>Radial menu workflow</h3>
+          <p>Double-tap Ctrl to open a radial menu with every tool one flick away — pen, shapes, text, blur, capture.</p>
+        </article>
+        <article>
+          <h3>Capture and share</h3>
+          <p>Screenshot, video and GIF capture with selection presets, freeze frame and auto-capture timers.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <h2>Tools at your fingertips</h2>
+      <div class="grid-3">
+        <article>
+          <h3>Drawing tools</h3>
+          <p>Pen, Arrow Pen, Highlighter and Highlighter MultiPoint with alpha-aware previews.</p>
+        </article>
+        <article>
+          <h3>Shapes and arrows</h3>
+          <p>Rectangle, ellipse, arrow, line — filled or outlined, with curved editing for linear shapes.</p>
+        </article>
+        <article>
+          <h3>Text and labels</h3>
+          <p>Inline Text and resizable Label Text with multi-line editing and 8-handle resize.</p>
+        </article>
+        <article>
+          <h3>Counter and Post-it</h3>
+          <p>Auto-numbered counters with curved connectors and sticky Post-it notes on the overlay.</p>
+        </article>
+        <article>
+          <h3>Focus tools</h3>
+          <p>Blur, Spotlight, Mask, Zoom and Screen Freeze keep attention where it matters.</p>
+        </article>
+        <article>
+          <h3>Capture</h3>
+          <p>Screenshot, Video and GIF with selection slots, free selection, freeze and auto-capture.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="media" class="media container">
+      <h2>Media</h2>
+      <p>Screenshots of QuickPen tools, the radial menu and settings screens.</p>
+      <div class="media-gallery-grid" data-media-grid></div>
+      <div class="media-lightbox" data-media-lightbox hidden>
+        <button class="media-lightbox-close" data-media-close type="button">Close</button>
+        <button class="media-lightbox-nav media-lightbox-prev" data-media-prev type="button">Prev</button>
+        <div class="media-lightbox-content" data-media-viewer></div>
+        <button class="media-lightbox-nav media-lightbox-next" data-media-next type="button">Next</button>
+      </div>
+    </section>
+
+    <section id="plans" class="plans container">
+      <h2>Free, with a Pro upgrade</h2>
+      <p class="plans-sub">Start free with every drawing tool. Unlock Pro features when you need them.</p>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h3>Free</h3>
+          <p class="pricing-desc">For everyday on-screen annotation.</p>
+          <ul class="pricing-list">
+            <li>All drawing tools (Pen, Highlighter, Shapes, Text)</li>
+            <li>Radial menu and tray launcher</li>
+            <li>Screenshot capture</li>
+            <li>Undo/Redo and selection editing</li>
+          </ul>
+          <a class="btn btn-secondary" href="https://github.com/hugouchoasborges/quick-pen-releases/releases/latest/download/QuickPen-Setup.exe" data-latest-download>Download Free</a>
+        </article>
+        <article class="pricing-card pricing-card-featured">
+          <span class="plan-badge">Pro</span>
+          <h3>Pro Lifetime</h3>
+          <p class="pricing-desc">All capture and advanced focus tools.</p>
+          <ul class="pricing-list">
+            <li>Video and GIF capture</li>
+            <li>Auto-capture timers and selection slots</li>
+            <li>Blur, Spotlight, Mask and Zoom focus tools</li>
+            <li>Background tool with Z-order control</li>
+          </ul>
+          <a class="btn btn-primary" href="https://github.com/hugouchoasborges/quick-pen-releases/releases/latest/download/QuickPen-Setup.exe" data-latest-download>Get QuickPen</a>
+        </article>
+      </div>
+      <p class="plans-note">Pro unlocks capture and focus tooling — see the manual for the full Free vs Pro breakdown.</p>
+    </section>
+
+    <section class="cta container">
+      <h2>Install in minutes. Annotate anything.</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/hugouchoasborges/quick-pen-releases/releases/latest/download/QuickPen-Setup.exe" data-latest-download>Download QuickPen</a>
+        <a class="btn btn-secondary" href="manual.html">Open the manual</a>
+      </div>
+    </section>
+
+    <section id="faq" class="faq container">
+      <h2>FAQ</h2>
+      <details><summary>How do I open the radial menu?</summary><p>Press <code>Ctrl</code> twice — on the second press, hold for a brief moment. The radial menu opens at the cursor with every tool reachable in one flick.</p></details>
+      <details><summary>Does QuickPen capture my screen continuously?</summary><p>No. Capture only happens when you explicitly start a screenshot, video or GIF session. QuickPen does not collect data in the background.</p></details>
+      <details><summary>Can I use QuickPen across multiple monitors?</summary><p>Yes. The overlay, side launcher and capture selection are monitor-aware, with per-monitor position memory and DPI-aware sizing.</p></details>
+      <details><summary>How do updates work?</summary><p>QuickPen checks the release manifest from <code>quick-pen-releases</code> and offers to download and install the latest version.</p></details>
+      <details><summary>Where are settings stored?</summary><p>User preferences are stored locally per Windows user. Nothing is uploaded.</p></details>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>QuickPen for Windows</p>
+    <nav class="footer-links" aria-label="Institutional links">
+      <a href="manual.html">Manual</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="third-party.html">Licenses</a>
+    </nav>
+    <p>&copy; <span id="year"></span> QuickPen</p>
+  </footer>
+
+  <script src="assets/scripts/main.js"></script>
+</body>
+</html>
