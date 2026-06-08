@@ -63,8 +63,8 @@ jobs:
             exit 1
           fi
 
-          SHA256="$(sha256sum "${INSTALLER_PATH}" | awk '{print toupper($1)}')"
-          INSTALLER_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG_NAME}/QuickPen-Setup.exe"
+          SHA256="$(sha256sum "${PORTABLE_ZIP_PATH}" | awk '{print toupper($1)}')"
+          INSTALLER_URL="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG_NAME}/QuickPen-Setup.zip"
           RELEASE_NOTES_URL="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG_NAME}"
 
           if [[ "${VERSION}" == *a ]]; then
