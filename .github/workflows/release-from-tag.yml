@@ -1,4 +1,4 @@
-﻿name: Release From Tag
+name: Release From Tag
 
 on:
   push:
